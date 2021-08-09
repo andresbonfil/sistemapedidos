@@ -1,0 +1,95 @@
+*{
+    background-color: rgb(73, 72, 70);
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+/*----------------NAVEGACION-------------*/
+nav{ 
+    background-color:gray; 
+    padding-top:10px;
+    text-align: center;
+    font-size: 24px;
+}
+nav ul{
+    background-color:rgb(73, 72, 70);
+    padding-bottom: 5px;
+}
+nav ul li{ 
+    list-style: none; 
+    display: inline;
+    background-color: rgb(73, 72, 70);
+}
+nav ul li a{
+    text-decoration: none;
+    color:black;
+    background-color: rgb(73, 72, 70);
+    font-size: 20px;
+}
+nav ul li a:hover{
+    color:white;
+}
+
+/*---------------ARTICULO----------------*/
+article{
+    text-align: center;
+    background-color: gray;
+    padding-bottom: 20px;
+}
+
+article form input{
+    margin-right: auto;margin-left: auto;
+    padding:5px; 
+    display:block;
+    height: 30px; 
+    font-size: 18px; 
+    border: 1px solid black; 
+    border-radius: 5px;
+    color: black;
+    background-color: gray;
+}
+article form input[type=submit]{
+    width: 200px;
+    height: 40px;
+    background-color: black;
+    color: gray;
+
+}
+article form input[type=submit]:hover{
+    background-color: gray;
+    color:white;
+}
+article form select{
+    margin-right: auto;margin-left: auto;
+    padding:5px; 
+    display:block;
+    height: 40px; width: 270px;
+    font-size: 18px; 
+    border: 1px solid black; 
+    border-radius: 5px;
+    color: black;
+    background-color: gray;
+}
+article a{
+    text-decoration: none;
+    color:rgb(73, 72, 70);
+    background-color: gray;
+}
+article a:hover{
+    color:white;
+}
+
+
+
+
+/*-----------------FOOTER-------------*/
+footer{
+    background-color:gray;
+    padding: 100px;
+    text-align: center;
+}
+footer a{
+    color: black;
+    background-color:gray;
+}
