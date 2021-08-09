@@ -13,6 +13,6 @@ class Usuario extends Model
         'tipoc', 
         'email',
         'password', 
-        'activo',
+        'token',
     ];
 }

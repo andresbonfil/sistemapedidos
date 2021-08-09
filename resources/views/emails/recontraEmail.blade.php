@@ -18,7 +18,7 @@ PROPORCIONARLE EL TOKEN GENERADO SIN EL CUAL NO ADMITIRÁ MODIFICACIONES-->
     <p>Para generar una nueva contraseña copia el codigo:</p>
     <h1>{{$datos['code']}}</h1>
     <p>Y pegalo en el enlace que aparece a continuacion:</p>
-    <p><a href="http://127.0.0.1:8000/emailRecovery?email={{$datos['email']}}" 
+    <p><a href="https://sistemapedidosback.herokuapp.com/emailRecovery?email={{$datos['email']}}" 
     style="font-size:16px; display: inline-block; background-color:blue; color:#fff;
     padding:12px; border-radius:4px; text-decoration: none;">Restablecer mi contraseña</a></p>
     <img src="http://uxproyect.000webhostapp.com/img/demo.jpg" alt="Pc Life Systems logo"
