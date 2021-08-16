@@ -38,7 +38,7 @@ class UsuarioController extends Controller{
             $usuario->nombre = $request->txtNombre;
             $usuario->tipoc = $request->txtTipoc;
             $usuario->email = $request->txtEmail;
-            $usuario->password = $request->txtPassword;
+            $usuario->password = md5($request->txtPassword);
             $usuario->token='';
             $usuario->save();
             return response()->json(['estatus'=>'Aprobado','info'=>$request->txtEmail], 200);
