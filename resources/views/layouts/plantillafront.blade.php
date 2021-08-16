@@ -28,4 +28,3 @@
     </footer>
 </body>
 </html>
-<script src="{{asset('js/scripts.js')}}"></script>

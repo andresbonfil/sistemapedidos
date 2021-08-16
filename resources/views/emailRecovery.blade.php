@@ -1,10 +1,10 @@
 @extends('layouts.plantillafront')
-@section('titulo','Sistema Pedidos')
+@section('titulo','Nueva contraseña')
 <!--ESTA ES LA VISTA-PLANTILLA  DONDE SE PIDE EL TOKEN QUE SE ENVIO AL CORREO DEL SOLICITANTE
 ESTE ES PARTE DEL API DE AQUI REDIRIGE AL CONTROLADOR emailRecoveryPost() QUE VALIDARA QUE EL
 EMAIL ESTE EN LA BD Y QUE EL TOKEN ESTE EN EL REGISTRO DEL USUARIO-->
 <?php if(!isset($_GET['email'])){ return back();}?>
-@section('articulo2')        
+@section('articulo1')        
     <form action="{{route('emailRecoveryPost')}}" method="POST">
     @csrf
         <h2>Restablecer contraseña</h2>
@@ -16,5 +16,5 @@ EMAIL ESTE EN LA BD Y QUE EL TOKEN ESTE EN EL REGISTRO DEL USUARIO-->
 </article>
 @endsection
 @section('piedepagina')
-<a href="#">Mis redes sociales</a>
+<a href="#">Mis redes sociales xD</a>
 @endsection
