@@ -72,7 +72,8 @@ class UsuarioController extends Controller{
             $usuario->token = $coderand=rand(100000,999999);
             $usuario->save();
             return response()->
-            json(['estatus'=>'SOLICITUD ACEPTADA TU NUEVO PASSWORD ES :','info'=>$request->password], 200);
+            json(['estatus'=>'<h1><a href="sistemapedidosfront.herokuapp.com">
+            SOLICITUD ACEPTADA</a></h1>TU NUEVO PASSWORD ES :','info'=>$request->password], 200);
             }
             else{
                 return response()->
