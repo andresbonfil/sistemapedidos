@@ -10,9 +10,12 @@ use Illuminate\Support\Facades\Mail;
 
 
 class UsuarioController extends Controller{
+    
     //ESTA ES LA FUNCION DE PRUEBA PARA VER LA LISTA DE USAURIOS EN FORMATO JSON
     //ESTE HACE UNA CONSULTA DE LOS ULTIMOS 5 (TAKE(5)) PARA NO GASTAR TANTO EN LA CONSULTA
     public function index(){ return Usuario::orderBy('id','desc')->take(5)->get(); }
+    
+    
     //ESTE ES SOLO UN EMAIL GENERICO MANDA UN MENSAJE GENERICO DENTRO DE UN EMAIL
     //SOLO PARA VER COMO FUNIONA EL MAKE:MAILER
     public function emailtest(){
@@ -21,6 +24,8 @@ class UsuarioController extends Controller{
         Mail::to('andresbonfil@gmail.com')->send($correo);
         return 'Gracias por recibir correo';
     }
+
+
     //ESTA ES LA FUNCION QUE RECIBE LA SOLICITUD DE GUARDAR UN NUEVO USUARIO
     //CUANDO SE INTENTA CREAR UN NUEVO USUARIO VIENE Y PREGUNTA SI YA EXISTE
     //SI NO ENTONCES LO CREA RESPONDE APROBADO O RECHAZADO
@@ -39,6 +44,8 @@ class UsuarioController extends Controller{
             return response()->json(['estatus'=>'Aprobado','info'=>$request->txtEmail], 200);
         }
     }
+
+
     //ESTA ES LA FUNCION QUE MANDA INSTRUCCIONES PARA RECUPERAR TU CORREO
     //SI EL EMAIL EXISTE EN NUESTRA BD GENERA UN CODIGO TOKEN Y LO ANEXA AL EMAIL
     //DEL QUE SE ESTA HACIENDO LA SOLICITUD SI NO EXISTE DEVUELVE RECHAZADO
@@ -61,6 +68,8 @@ class UsuarioController extends Controller{
             return response()->json(['estatus'=>'Rechazado','info'=>$request->txtEmail], 400);
         }
     }
+
+
     //ESTA FUNCION RECIBE LA PETICION DE CAMBIO DE CONTRASEÑA TIENE QUE VALIDAR EL CORREO SOLICITANTE
     //Y TIENE QUE VALIDAR QUE EL TOKEN SEA VALIDO Y TIENE QUE CAMBIARLO PARA QUE YA NO SE PUEDA REALIZAR
     //LA OPERACION NO SIN ANTES VOLVER A SOLICITUAR QUE LO ENVIEN A TU CORREO. COMO NO FORMA PARTE DEL
@@ -71,7 +80,8 @@ class UsuarioController extends Controller{
             $usuario->password = md5($request->password);
             $usuario->token = $coderand=rand(100000,999999);
             $usuario->save();
-            return '<h1> SOLICITUD ACEPTADA, TU NUEVO PASSWORD ES :<br>'.$request->password.'</h1>';
+            return '<h1 style="font-size: 25px"> SOLICITUD ACEPTADA, TU NUEVO PASSWORD ES :<br>'
+            .$request->password.'</h1>';
             }
             else{
                 return response()->
@@ -82,6 +92,7 @@ class UsuarioController extends Controller{
             return response()->json(['estatus'=>'SOLICITUD RECHAZADA POR CORREO INVALIDO','info'=>$request->email], 400);
         }
     }
+
 
     //public function create(){}
     //public function show(usuario $usuario){ }

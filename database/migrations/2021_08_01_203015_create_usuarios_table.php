@@ -8,11 +8,11 @@ class CreateUsuariosTable extends Migration{
     public function up(){
         Schema::create('usuarios', function (Blueprint $table) {
             $table->id();
-            $table->char('nombre', 30);
-            $table->char('tipoc', 9);
-            $table->char('email', 30);
-            $table->char('password', 32);
-            $table->char('token', 6)->nullable();
+            $table->string('nombre');//30
+            $table->string('tipoc');//9
+            $table->string('email');//30
+            $table->char('password', 32);//FIJO POR MD5
+            $table->char('token', 6)->nullable();//FIJO POR CODERAND
             $table->timestamps();
         });
     }
