@@ -13,10 +13,10 @@
 <form action="{{route('emailRecoveryPost')}}" method="POST">
     @csrf
         <h2>Restablecer contraseña</h2>
-        <input type="email" name="email" value="{{$_GET['email']}}" sytle="font-size: 18px" readonly><br>
-        <input type="text" name="password" placeholder="Contraseña Nueva" sytle="font-size: 18px"><br>
-        <input type="number" name="token" placeholder="Ingresa codigo(6 digitos)" sytle="font-size: 18px">
-        <input type="submit" value="Regenerar" sytle="font-size: 18px">
+        <input type="email" name="email" value="{{$_GET['email']}}" sytle="font-size: 25px" readonly><br>
+        <input type="text" name="password" placeholder="Contraseña Nueva" sytle="font-size: 25px"><br>
+        <input type="number" name="token" placeholder="Ingresa codigo(6 digitos)" sytle="font-size: 25px">
+        <input type="submit" value="Regenerar" sytle="font-size: 25px">
     </form>
 </article>
 <a href="#">Mis redes sociales xD</a>
