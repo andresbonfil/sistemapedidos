@@ -7,6 +7,7 @@ use App\Http\Controllers\UsuarioController;
 Route::middleware('auth:api')->get('/user', function (Request $request) { return $request->user(); });
 Route::apiResource("usuario", UsuarioController::class);
 Route::post('usuario/recontra', [UsuarioController::class, 'recontra'])->name('usuario.recontra');
+Route::post('usuario/login', [UsuarioController::class, 'login'])->name('usuario.login');
 
 //Route::get('usuairo/{id}', [UsuarioController::class,'show'])->name('usuario.show');
 //Route::put('usuario/{id}', [UsuarioController::class, 'update'])->name('usuario.update');

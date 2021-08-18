@@ -14,17 +14,21 @@ class UsuarioController extends Controller{
     //ESTA ES LA FUNCION DE PRUEBA PARA VER LA LISTA DE USAURIOS EN FORMATO JSON
     //ESTE HACE UNA CONSULTA DE LOS ULTIMOS 5 (TAKE(5)) PARA NO GASTAR TANTO EN LA CONSULTA
     public function index(){ return Usuario::orderBy('id','desc')->take(5)->get(); }
-    
-    
-    //ESTE ES SOLO UN EMAIL GENERICO MANDA UN MENSAJE GENERICO DENTRO DE UN EMAIL
-    //SOLO PARA VER COMO FUNIONA EL MAKE:MAILER
-    public function emailtest(){
-        $data=['nombre'=>'andres', 'apellido'=>'bonfil', 'telefono'=>7355781754];
-        $correo=new testEmail($data);
-        Mail::to('andresbonfil@gmail.com')->send($correo);
-        return 'Gracias por recibir correo';
-    }
 
+    public function login(Request $request){
+        if($usuario=Usuario::where('email','=',$request->email)->first()){            
+            if($usuario->password==md5($request->password)){
+                session(['nombre' => $usuario->nombre]);
+                return response()->json(['estatus'=>'Aprobado', 'info'=>$usuario->tipoc], 400);
+            }
+            else{
+                return response()->json(['estatus'=>'Rechazado', 'info'=>$request->password], 400);
+            }
+        }
+        else{
+            return response()->json(['estatus'=>'Rechazado','info'=>$request->email], 400);
+        }
+    }
 
     //ESTA ES LA FUNCION QUE RECIBE LA SOLICITUD DE GUARDAR UN NUEVO USUARIO
     //CUANDO SE INTENTA CREAR UN NUEVO USUARIO VIENE Y PREGUNTA SI YA EXISTE
@@ -93,6 +97,15 @@ class UsuarioController extends Controller{
         }
     }
 
+
+    //ESTE ES SOLO UN EMAIL GENERICO MANDA UN MENSAJE GENERICO DENTRO DE UN EMAIL
+    //SOLO PARA VER COMO FUNIONA EL MAKE:MAILER
+    public function emailtest(){
+        $data=['nombre'=>'andres', 'apellido'=>'bonfil', 'telefono'=>7355781754];
+        $correo=new testEmail($data);
+        Mail::to('andresbonfil@gmail.com')->send($correo);
+        return 'Gracias por recibir correo';
+    }
 
     //public function create(){}
     //public function show(usuario $usuario){ }

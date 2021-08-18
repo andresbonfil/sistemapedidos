@@ -12,13 +12,13 @@ POR DESGRACIA NO CARGA LA PLANTILLA PLANTILLAFRONT.BLADE.PHP ESTILOS SE PONDRAN 
     <link rel="stylesheet" href="{{asset('css/plantillafront.css')}}">
     <title>Cambiando contraseña</title>
 </head>
-<body>
+<body style="background: gray">
     <form action="{{route('emailRecoveryPost')}}" method="POST">
     @csrf
         <h2>Restablecer contraseña</h2>
         <input type="email" name="email" value="{{$_GET['email']}}" style="font-size: 25px" readonly><br>
-        <input type="text" name="password" placeholder="Contraseña Nueva" style="font-size: 25px"><br>
-        <input type="number" name="token" placeholder="Ingresa codigo(6 digitos)" style="font-size: 25px"><br>
+        <input type="text" name="password" placeholder="Contraseña Nueva" style="font-size: 25px" required><br>
+        <input type="number" name="token" placeholder="Ingresa codigo(6 digitos)" style="font-size: 25px" required><br>
         <input type="submit" value="Regenerar" style="font-size: 25px">
     </form>
 </body>

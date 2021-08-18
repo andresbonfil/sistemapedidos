@@ -7,7 +7,6 @@
 </head>
 <body>
     <h1>COTISAZACIONES BONFIL</h1>
-    <h2>On constructuchor...</h2>
     <img src="{{asset('images/otras/constru.jpg')}}" alt="No sale :("><br>
     @yield('contenido')
 </body>
