@@ -7,7 +7,9 @@
 </head>
 <body>
     <h1>COTISAZACIONES BONFIL</h1>
-    <img src="{{asset('images/otras/constru.jpg')}}" alt="No sale :("><br>
+    <h2><a href="{{route('usuario')}}"></a> usuario</h2>
+    <h2><a href="{{route('emailRecovery')}}"></a> emailrecovery</h2>
+    <h2><a href="{{route('emailTest')}}"></a> email</h2>
     @yield('contenido')
 </body>
 </html>
