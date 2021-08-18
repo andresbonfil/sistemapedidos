@@ -10,7 +10,7 @@
     <h2><a href="{{route('usuario')}}"></a> usuario</h2>
     <h2><a href="{{route('emailRecovery')}}"></a> emailrecovery</h2>
     <h2><a href="{{route('emailTest')}}"></a> email</h2>
-    <p>Modificaciones</p>
+    <p>Modificaciones hechas a fuerza</p>
     @yield('contenido')
 </body>
 </html>
