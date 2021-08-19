@@ -2,7 +2,10 @@
 <h2>TRABAJANDO EN PRODUCCION:</h2>
 http://sistemapedidosback.herokuapp.com/
 <br>
+APP_KEY=base64:LzHKX5RgAxjl2QI+XqG+KDFgzaYGoNNTU69mbZHJ94I=
+<hr>
 http://sistemapedidosfront.herokuapp.com/
+APP_KEY=base64:LzHKX5RgAxjl2QI+XqG+KDFgzaYGoNNTU69mbZHJ94I=
 <hr>
 
 
